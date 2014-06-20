@@ -1,11 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300);
+
 *, *:before, *:after {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
+a, input, textarea {
+	outline: none;
+}
+
 html, body {
 	height: 100%;
+}
+
+body {
+	font-family: "Raleway";
+	font-weight: 300;
+	font-size: 1em;
 }
 
 #canvas {
@@ -28,24 +40,67 @@ html, body {
 	justify-content: center;
 	align-items: stretch;
   align-content: stretch;
+  padding: 1em;
+  .label {
+  	display: flex;
+  	align-items: center;
+  	color: #FFF;
+  	width: 70px;
+		justify-content: center;
+  }
+  input {
+  	align-self: flex-start;
+  }
+  textarea {
+  	background: transparent;
+  	width: 0;
+  	border: 0;
+		font-size: 0.9em;
+		color: #FFF;
+  }
 }
 
-[data-color="#5ab7c4"] {
-	background: #5ab7c4;
+$color-a: #5ab7c4;
+$color-b: #5d9ac7;
+$color-c: #5f7dc9;
+$color-d: #6462cb;
+$color-e: #8665ce;
+
+[data-color="color-a"] {
+	background: $color-a;
+	&:hover {
+		background: lighten( $color-a, 3%);
+	}
 }
 
-[data-color="#5d9ac7"] {
-	background: #5d9ac7;
+[data-color="color-b"] {
+	background: $color-b;
+	&:hover {
+		background: lighten( $color-b, 3%);
+	}
 }
 
-[data-color="#5f7dc9"] {
-	background: #5f7dc9;
+[data-color="color-c"] {
+	background: $color-c;
+	&:hover {
+		background: lighten( $color-c, 3%);
+	}
 }
 
-[data-color="#6462cb"] {
-	background: #6462cb;
+[data-color="color-d"] {
+	background: $color-d;
+	&:hover {
+		background: lighten( $color-d, 3%);
+	}
 }
 
-[data-color="#8665ce"] {
-	background: #8665ce;
+[data-color="color-e"] {
+	background: $color-e;
+	&:hover {
+		background: lighten( $color-e, 3%);
+	}
 }
+
+
+
+
