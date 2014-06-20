@@ -42,6 +42,7 @@ body {
   align-content: stretch;
   padding: 1em;
   .label {
+  	font-size: 1.2em;
   	display: flex;
   	align-items: center;
   	color: #FFF;
@@ -52,11 +53,14 @@ body {
   	align-self: flex-start;
   }
   textarea {
+  	display: none;
   	background: transparent;
   	width: 0;
   	border: 0;
 		font-size: 0.9em;
 		color: #FFF;
+		border: 2px solid rgba(255, 255, 255, 0.2);
+		padding: 1.5em;
   }
 }
 
@@ -69,35 +73,35 @@ $color-e: #a382d8;
 [data-color="color-a"] {
 	background: $color-a;
 	&:hover {
-		background: lighten( $color-a, 5%);
+		//background: lighten( $color-a, 5%);
 	}
 }
 
 [data-color="color-b"] {
 	background: $color-b;
 	&:hover {
-		background: lighten( $color-b, 5%);
+		//background: lighten( $color-b, 5%);
 	}
 }
 
 [data-color="color-c"] {
 	background: $color-c;
 	&:hover {
-		background: lighten( $color-c, 5%);
+		//background: lighten( $color-c, 5%);
 	}
 }
 
 [data-color="color-d"] {
 	background: $color-d;
 	&:hover {
-		background: lighten( $color-d, 5%);
+		//background: lighten( $color-d, 5%);
 	}
 }
 
 [data-color="color-e"] {
 	background: $color-e;
 	&:hover {
-		background: lighten( $color-e, 5%);
+		//background: lighten( $color-e, 5%);
 	}
 }
 
