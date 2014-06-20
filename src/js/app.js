@@ -1,7 +1,10 @@
 (function() {
 
+	var actual_textarea;
+
 	$canvas = $("#canvas");
 	$colums = $(".colum");
+	$textarea = $colums.find('textarea');
 
 	$colums.on('click', function() {
 
@@ -20,9 +23,6 @@
 		$this.nextAll().find('textarea').css('width', '0').hide();
 		$this.find('textarea').focus();
 
-
 	});
-
-	console.log($("#peliculas").val());
 
 })();

@@ -60,44 +60,44 @@ body {
   }
 }
 
-$color-a: #5ab7c4;
-$color-b: #5d9ac7;
-$color-c: #5f7dc9;
-$color-d: #6462cb;
-$color-e: #8665ce;
+$color-a: #c98850;
+$color-b: #346ca6;
+$color-c: #78a734;
+$color-d: #ab3558;
+$color-e: #a382d8;
 
 [data-color="color-a"] {
 	background: $color-a;
 	&:hover {
-		background: lighten( $color-a, 3%);
+		background: lighten( $color-a, 5%);
 	}
 }
 
 [data-color="color-b"] {
 	background: $color-b;
 	&:hover {
-		background: lighten( $color-b, 3%);
+		background: lighten( $color-b, 5%);
 	}
 }
 
 [data-color="color-c"] {
 	background: $color-c;
 	&:hover {
-		background: lighten( $color-c, 3%);
+		background: lighten( $color-c, 5%);
 	}
 }
 
 [data-color="color-d"] {
 	background: $color-d;
 	&:hover {
-		background: lighten( $color-d, 3%);
+		background: lighten( $color-d, 5%);
 	}
 }
 
 [data-color="color-e"] {
 	background: $color-e;
 	&:hover {
-		background: lighten( $color-e, 3%);
+		background: lighten( $color-e, 5%);
 	}
 }
 
