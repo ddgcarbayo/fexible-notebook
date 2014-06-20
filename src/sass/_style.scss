@@ -1,3 +1,50 @@
-h1 {
-	font-size: 1em;
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+[data-grid="container"] {
+  display:flex;
+  flex-direction: row;
+  height: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+[data-grid="colum"] {
+	position: relative;
+	display: flex;
+	background-color: #EEE;
+	text-align: center;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: stretch;
+  align-content: stretch;
+}
+
+[data-color="#5ab7c4"] {
+	background: #5ab7c4;
+}
+
+[data-color="#5d9ac7"] {
+	background: #5d9ac7;
+}
+
+[data-color="#5f7dc9"] {
+	background: #5f7dc9;
+}
+
+[data-color="#6462cb"] {
+	background: #6462cb;
+}
+
+[data-color="#8665ce"] {
+	background: #8665ce;
 }
