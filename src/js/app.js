@@ -25,7 +25,7 @@ var name_columns = ['peliculas', 'ideas', 'compras', 'musica', 'trabajo'];
 		$this.nextAll().find('.label').fadeTo(200,1);
 
 		$this.prevAll().find('textarea').css('width', '0').hide();
-		$this.find('textarea').css('width', '100%').fadeTo(300,1).show();
+		$this.find('textarea').css('width', '100%').fadeTo(250, 1).show();
 		$this.nextAll().find('textarea').css('width', '0').hide();
 		$this.find('textarea').focus();
 	});

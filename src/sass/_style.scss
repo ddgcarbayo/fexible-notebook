@@ -15,42 +15,42 @@ html, body {
 }
 
 body {
-	font-family: "Raleway";
 	font-weight: 300;
 	font-size: 1em;
+	font-family: "Raleway";
 }
 
 #canvas {
   display:flex;
   flex-direction: row;
   height: 100%;
+  cursor: pointer;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-content: stretch;
   align-items: stretch;
-  cursor: pointer;
 }
 
 .colum {
 	position: relative;
 	display: flex;
+  padding: 1em;
 	background-color: #EEE;
 	text-align: center;
-	flex-grow: 1;
-	justify-content: center;
-	align-items: stretch;
-  align-content: stretch;
-  padding: 1em;
 	-webkit-transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: stretch;
+  align-content: stretch;
   .label {
-  	font-size: 1.2em;
   	display: flex;
-  	align-items: center;
-  	color: #FFF;
   	width: 70px;
+  	color: #FFF;
+  	font-size: 1.2em;
+  	align-items: center;
 		justify-content: center;
   }
   input {
@@ -58,12 +58,13 @@ body {
   }
   textarea {
   	display: none;
-  	background: transparent;
+		padding: 1.5em;
   	width: 0;
   	border: 0;
-		font-size: 0.9em;
+  	background: transparent;
 		color: #FFF;
-		padding: 1.5em;
+		font-size: 0.9em;
+		font-family: "arial";
 		-webkit-transition: all .2s ease-in-out;
 		-moz-transition: all .2s ease-in-out;
 		-o-transition: all .2s ease-in-out;
@@ -122,9 +123,9 @@ footer {
 	a {
 		display: block;
 		padding: 1em;
+		color: rgba(255,255,255, 0.5);
 		text-align: center;
 		text-decoration: none;
-		color: rgba(255,255,255, 0.5);
 		-webkit-transition: all .2s linear;
 		-moz-transition: all .2s linear;
 		-o-transition: all .2s linear;
