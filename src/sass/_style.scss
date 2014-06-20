@@ -8,7 +8,7 @@ html, body {
 	height: 100%;
 }
 
-[data-grid="container"] {
+#canvas {
   display:flex;
   flex-direction: row;
   height: 100%;
@@ -16,9 +16,10 @@ html, body {
   justify-content: space-between;
   align-content: stretch;
   align-items: stretch;
+  cursor: pointer;
 }
 
-[data-grid="colum"] {
+.colum {
 	position: relative;
 	display: flex;
 	background-color: #EEE;
