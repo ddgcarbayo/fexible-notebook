@@ -21,19 +21,22 @@ body {
 }
 
 #canvas {
-  display:flex;
-  flex-direction: row;
+  //display:flex;
+  //flex-direction: row;
   height: 100%;
   cursor: pointer;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-content: stretch;
-  align-items: stretch;
+  //flex-wrap: nowrap;
+  //justify-content: space-between;
+  //align-content: stretch;
+  //align-items: stretch;
+  min-height: 100%;
 }
 
 .colum {
 	position: relative;
-	display: flex;
+	float: left;
+	width: 20%;
+	//display: flex;
   padding: 1em;
 	background-color: #EEE;
 	text-align: center;
@@ -41,17 +44,22 @@ body {
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
 	transition: all 0.2s linear;
-	flex-grow: 1;
-	justify-content: center;
-	align-items: stretch;
-  align-content: stretch;
+	//flex-grow: 1;
+	//justify-content: center;
+	//align-items: stretch;
+  //align-content: stretch;
+  height: 100%;
   .label {
-  	display: flex;
-  	width: 70px;
+  	position: absolute;
+  	top: 50%;
+  	left: 30%;
+  	text-align: center;
+  	// display: flex;
+  	// width: 70px;
   	color: #FFF;
   	font-size: 1.2em;
-  	align-items: center;
-		justify-content: center;
+  	// align-items: center;
+		// justify-content: center;
   }
   input {
   	align-self: flex-start;
@@ -65,6 +73,7 @@ body {
 		color: #FFF;
 		font-size: 0.9em;
 		font-family: "arial";
+		height: 100%;
   }
 }
 

@@ -3,6 +3,10 @@ var name_columns = ['peliculas', 'ideas', 'compras', 'musica', 'trabajo'];
 
 $(function() {
 
+	$canvas = $("#canvas");
+	$colums = $(".colum");
+	$textarea = $colums.find('textarea');
+
 	$('#year').text(getDate());
 
 	for(var i=0; i < name_columns_size; i++) {
@@ -11,16 +15,12 @@ $(function() {
 		}
 	};
 
-	$canvas = $("#canvas");
-	$colums = $(".colum");
-	$textarea = $colums.find('textarea');
-
 	$colums.on('click', function() {
 		$this = $(this);
 
-		$this.prevAll().css('flex-grow', '1');
-		$this.css('flex-grow', '5');
-		$this.nextAll().css('flex-grow', '1');
+		$this.prevAll().css('width', '15%');
+		$this.css('width', '40%');
+		$this.nextAll().css('width', '15%');
 
 		$this.prevAll().find('.label').fadeTo(200,1);
 		$this.find('.label').fadeTo(200,0).hide();
