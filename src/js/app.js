@@ -1,7 +1,9 @@
 var name_columns = ['peliculas', 'ideas', 'compras', 'musica', 'trabajo'];
 		name_columns_size = name_columns.length;
 
-(function() {
+$(function() {
+
+	$('#year').text(getDate());
 
 	for(var i=0; i < name_columns_size; i++) {
 		if(localStorage.getItem('' + name_columns[i])) {
@@ -42,4 +44,16 @@ var name_columns = ['peliculas', 'ideas', 'compras', 'musica', 'trabajo'];
 		mini_data.description = _description;
 	});
 
-})();
+});
+
+function getDate() {
+	var today = new Date();
+			day = today.getDate();
+			month = today.getMonth() + 1;
+			year = today.getFullYear();
+
+	if(day < 10) { day='0'+day }
+	if(month < 10) { month='0'+month }
+
+	return year;
+}
