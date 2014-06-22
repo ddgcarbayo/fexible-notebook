@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 *, *:before, *:after {
 	-webkit-box-sizing: border-box;
@@ -17,26 +17,25 @@ html, body {
 body {
 	font-weight: 300;
 	font-size: 1em;
-	font-family: "Raleway";
+	font-family: "Open Sans", airal;
+}
+
+input, textarea {
+	font-family: "Open Sans", airal;
+	font-weight: 300;
 }
 
 #canvas {
-  //display:flex;
-  //flex-direction: row;
   height: 100%;
   cursor: pointer;
-  //flex-wrap: nowrap;
-  //justify-content: space-between;
-  //align-content: stretch;
-  //align-items: stretch;
   min-height: 100%;
+  overflow: hidden;
 }
 
 .colum {
 	position: relative;
 	float: left;
 	width: 20%;
-	//display: flex;
   padding: 1em;
 	background-color: #EEE;
 	text-align: center;
@@ -44,33 +43,18 @@ body {
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
 	transition: all 0.2s linear;
-	//flex-grow: 1;
-	//justify-content: center;
-	//align-items: stretch;
-  //align-content: stretch;
   height: 100%;
-  .label {
-  	float: left;
-  	display: block;
- 		position: absolute;
-    //top: 50%;
-    //left: 50%;
-  	text-align: center;
-  	// display: flex;
-  	width: 100%;
-  	color: #FFF;
-  	font-size: 1.2em;
-  	// align-items: center;
-		// justify-content: center;
-		// transform: translate(-50%, -50%);
-  //   -ms-transform: translate(-50%, -50%);
-  //   -moz-transform: translate(-50%, -50%);
-  //   -webkit-transform: translate(-50%, -50%);
-
-  }
   input {
-  	align-self: flex-start;
-  }
+		width: 94%;
+		margin: 1em;
+		display: block;
+		background: transparent;
+		border: 0;
+		text-align: center;
+  	color: #FFF;
+  	font-size: 1.2rem;
+  	margin: 0 auto;
+	}
   textarea {
   	float: left;
   	display: none;
@@ -79,11 +63,10 @@ body {
   	border: 0;
   	background: transparent;
 		color: #FFF;
-		font-size: 1em;
-		font-family: "arial";
-		font-weight: 300;
+		font-size: 1rem;
 		height: 100%;
 		resize: none;
+		margin: 1em 0;
   }
 }
 
@@ -100,6 +83,7 @@ body {
     -ms-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
+    padding: 1em 0;
 }
 
 $color-a: #c98850;
@@ -108,35 +92,35 @@ $color-c: #78a734;
 $color-d: #ab3558;
 $color-e: #a382d8;
 
-[data-color="color-a"] {
+[data-column="c0"] {
 	background: $color-a;
 	&:hover {
 		background: lighten( $color-a, 5%);
 	}
 }
 
-[data-color="color-b"] {
+[data-column="c1"] {
 	background: $color-b;
 	&:hover {
 		background: lighten( $color-b, 5%);
 	}
 }
 
-[data-color="color-c"] {
+[data-column="c2"] {
 	background: $color-c;
 	&:hover {
 		background: lighten( $color-c, 5%);
 	}
 }
 
-[data-color="color-d"] {
+[data-column="c3"] {
 	background: $color-d;
 	&:hover {
 		background: lighten( $color-d, 5%);
 	}
 }
 
-[data-color="color-e"] {
+[data-column="c4"] {
 	background: $color-e;
 	&:hover {
 		background: lighten( $color-e, 5%);
@@ -145,7 +129,7 @@ $color-e: #a382d8;
 
 footer {
 	position: fixed;
-	top: 5px;
+	bottom: 5px;
 	right: 5px;
 	width: 19%;
 	background: rgba(0,0,0, 0.2);
