@@ -22,9 +22,9 @@ $(function() {
 		$this.css('width', '40%');
 		$this.nextAll().css('width', '15%');
 
-		$this.prevAll().find('.label').fadeTo(200,1);
-		$this.find('.label').fadeTo(200,0).hide();
-		$this.nextAll().find('.label').fadeTo(200,1);
+		// $this.prevAll().find('.label').fadeTo(200,1);
+		// $this.find('.label').fadeTo(200,0).hide();
+		// $this.nextAll().find('.label').fadeTo(200,1);
 
 		$this.prevAll().find('textarea').css('width', '0').hide();
 		$this.find('textarea').css('width', '100%').fadeTo(250, 1).show();

@@ -50,26 +50,29 @@ body {
   //align-content: stretch;
   height: 100%;
   .label {
+  	float: left;
+  	display: block;
  		position: absolute;
-    top: 50%;
-    left: 50%;
+    //top: 50%;
+    //left: 50%;
   	text-align: center;
   	// display: flex;
-  	// width: 70px;
+  	width: 100%;
   	color: #FFF;
   	font-size: 1.2em;
   	// align-items: center;
 		// justify-content: center;
-		transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
+		// transform: translate(-50%, -50%);
+  //   -ms-transform: translate(-50%, -50%);
+  //   -moz-transform: translate(-50%, -50%);
+  //   -webkit-transform: translate(-50%, -50%);
 
   }
   input {
   	align-self: flex-start;
   }
   textarea {
+  	float: left;
   	display: none;
 		padding: 1.5em;
   	width: 0;
@@ -80,7 +83,23 @@ body {
 		font-family: "arial";
 		font-weight: 300;
 		height: 100%;
+		resize: none;
   }
+}
+
+.inner {
+ 		position: absolute;
+    top: 50%;
+    left: 50%;
+  	width: 100%;
+  	color: #FFF;
+  	font-size: 1.2em;
+  	align-items: center;
+		justify-content: center;
+		transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
 
 $color-a: #c98850;
@@ -92,35 +111,35 @@ $color-e: #a382d8;
 [data-color="color-a"] {
 	background: $color-a;
 	&:hover {
-		//background: lighten( $color-a, 5%);
+		background: lighten( $color-a, 5%);
 	}
 }
 
 [data-color="color-b"] {
 	background: $color-b;
 	&:hover {
-		//background: lighten( $color-b, 5%);
+		background: lighten( $color-b, 5%);
 	}
 }
 
 [data-color="color-c"] {
 	background: $color-c;
 	&:hover {
-		//background: lighten( $color-c, 5%);
+		background: lighten( $color-c, 5%);
 	}
 }
 
 [data-color="color-d"] {
 	background: $color-d;
 	&:hover {
-		//background: lighten( $color-d, 5%);
+		background: lighten( $color-d, 5%);
 	}
 }
 
 [data-color="color-e"] {
 	background: $color-e;
 	&:hover {
-		//background: lighten( $color-e, 5%);
+		background: lighten( $color-e, 5%);
 	}
 }
 
