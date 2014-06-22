@@ -2,9 +2,12 @@ $(function() {
 
 	$canvas = $("#canvas");
 	$colums = $(".colum");
+	$inputs = $(".colum input");
 	$textarea = $colums.find('textarea');
 
 	$('#year').text(getDate());
+
+	$inputs.fadeTo(1500, 1);
 
 	var COLUMNS = 5;
 
