@@ -3,22 +3,22 @@ var flexNote = new FlexNote();
 function FlexNote() {
 
 	var $canvas = document.querySelector("#canvas"),
-			$colums = $(".colum"),
+			$columns = $(".colum"),
 			$inputs = $(".colum input"),
-			$textarea = $colums.find('textarea');
+			$textarea = $columns.find('textarea');
 
 	function getDataStorage(num_colums) {
 		for(var i=0; i <= num_colums; i++) {
 			if(localStorage.getItem('c' + i)) {
-				_this = $('.colum').data('column', 'c' + i)[i];
-				$(_this).find('input').val(JSON.parse(localStorage.getItem('c' + i)).name);
-				$(_this).find('textarea').val(JSON.parse(localStorage.getItem('c' + i)).description);
+				el = $('.colum').data('column', 'c' + i)[i];
+				$(el).find('input').val(JSON.parse(localStorage.getItem('c' + i)).name);
+				$(el).find('textarea').val(JSON.parse(localStorage.getItem('c' + i)).description);
 			}
 		};
 	}
 
 	function setDataStorage() {
-		$colums.on('focusout', function() {
+		$columns.on('focusout', function() {
 			var data = {},
 					pos_column = $(this).data("column"),
 					name = $(this).find('input').val(),
@@ -32,21 +32,21 @@ function FlexNote() {
 	}
 
 	function animationColumns() {
-		$colums.on('click', function() {
-			$this = $(this);
+		$columns.on('click', function() {
+			el = $(this);
 
-			$this.prevAll().css('width', '15%');
-			$this.css('width', '40%');
-			$this.nextAll().css('width', '15%');
+			el.prevAll().css('width', '15%');
+			el.css('width', '40%');
+			el.nextAll().css('width', '15%');
 
-			$this.prevAll().find('textarea').css('width', '0').hide();
-			$this.find('textarea').css('width', '100%').fadeTo(250, 1).show();
-			$this.nextAll().find('textarea').css('width', '0').hide();
-			//$this.find('textarea').focus();
+			el.prevAll().find('textarea').css('width', '0').hide();
+			el.find('textarea').css('width', '100%').fadeTo(250, 1).show();
+			el.nextAll().find('textarea').css('width', '0').hide();
+			//el.find('textarea').focus();
 
-			$this.prevAll().find('.inner').css('height', 'auto');
-			$this.find('.inner').css('height', '100%');
-			$this.nextAll().find('.inner').css('height', 'auto');
+			el.prevAll().find('.inner').css('height', 'auto');
+			el.find('.inner').css('height', '100%');
+			el.nextAll().find('.inner').css('height', 'auto');
 		});
 	}
 
