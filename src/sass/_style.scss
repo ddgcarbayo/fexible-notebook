@@ -21,71 +21,71 @@ body {
 }
 
 input, textarea {
-	font-family: "Open Sans", airal;
 	font-weight: 300;
+	font-family: "Open Sans", airal;
 }
 
 #canvas {
+  overflow: hidden;
+  min-height: 100%;
   height: 100%;
   cursor: pointer;
-  min-height: 100%;
-  overflow: hidden;
 }
 
 .colum {
 	position: relative;
 	float: left;
-	width: 20%;
   padding: 1em;
+	width: 20%;
+  height: 100%;
 	background-color: #EEE;
 	text-align: center;
 	-webkit-transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
 	transition: all 0.2s linear;
-  height: 100%;
   input {
   	display: none;
-  	opacity: 0;
-		width: 90%;
-		margin: 1em;
 		display: block;
-		background: transparent;
-		border: 0;
-		text-align: center;
-  	color: #FFF;
-  	font-size: 1.2rem;
+		width: 70%;
+		margin: 1em;
   	margin: 0 auto;
+		border: 0;
+		background: transparent;
+  	color: #FFF;
+		text-align: center;
+  	font-size: 1.2rem;
+  	opacity: 0;
 	}
   textarea {
-  	float: left;
   	display: none;
+  	float: left;
+		margin: 1em 0;
 		padding: 1.5em;
   	width: 0;
+		height: 100%;
   	border: 0;
   	background: transparent;
 		color: #FFF;
 		font-size: 1rem;
-		height: 100%;
 		resize: none;
-		margin: 1em 0;
   }
 }
 
 .inner {
- 		position: absolute;
-    top: 50%;
-    left: 50%;
-  	width: 100%;
-  	color: #FFF;
-  	font-size: 1.2em;
-  	align-items: center;
-		justify-content: center;
-		transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    padding: 1em 0;
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 1em 0;
+	width: 100%;
+	color: #FFF;
+	font-size: 1.2em;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	align-items: center;
+	justify-content: center;
 }
 
 $color-a: #c98850;
@@ -131,11 +131,14 @@ $color-e: #a382d8;
 
 footer {
 	position: fixed;
-	bottom: 5px;
 	right: 5px;
+	bottom: 5px;
 	width: 19%;
 	background: rgba(0,0,0, 0.2);
 	cursor: pointer;
+	@media(max-width: 767px) {
+		display: none;
+	}
 	a {
 		display: block;
 		padding: 1em;

@@ -1,93 +1,88 @@
-$(function() {
+var flexNote = new FlexNote();
 
-	$canvas = $("#canvas");
-	$colums = $(".colum");
-	$inputs = $(".colum input");
-	$textarea = $colums.find('textarea');
+function FlexNote() {
 
-	$('#year').text(getDate());
+	var $canvas = document.querySelector("#canvas"),
+			$colums = $(".colum"),
+			$inputs = $(".colum input"),
+			$textarea = $colums.find('textarea');
 
-	$inputs.fadeTo(1500, 1);
+	function getDataStorage(num_colums) {
+		for(var i=0; i <= num_colums; i++) {
+			if(localStorage.getItem('c' + i)) {
+				_this = $('.colum').data('column', 'c' + i)[i];
+				$(_this).find('input').val(JSON.parse(localStorage.getItem('c' + i)).name);
+				$(_this).find('textarea').val(JSON.parse(localStorage.getItem('c' + i)).description);
+			}
+		};
+	}
 
-	var COLUMNS = 5;
+	function setDataStorage() {
+		$colums.on('focusout', function() {
+			var data = {},
+					pos_column = $(this).data("column"),
+					name = $(this).find('input').val(),
+					description = $(this).find('textarea').val();
 
-	for(var i=0; i <= COLUMNS; i++) {
+			data.name = name;
+			data.description = description;
 
-		if(localStorage.getItem('c' + i)) {
+			localStorage.setItem(pos_column, JSON.stringify(data));
+		});
+	}
 
-			JSON.parse(localStorage.getItem('c' + i));
-			//console.log(JSON.parse(localStorage.getItem('c' + i)));
+	function animationColumns() {
+		$colums.on('click', function() {
+			$this = $(this);
 
-			var that = $('.colum').data('colum', 'c' + i)[i];
+			$this.prevAll().css('width', '15%');
+			$this.css('width', '40%');
+			$this.nextAll().css('width', '15%');
 
-			//console.log(that);
+			$this.prevAll().find('textarea').css('width', '0').hide();
+			$this.find('textarea').css('width', '100%').fadeTo(250, 1).show();
+			$this.nextAll().find('textarea').css('width', '0').hide();
+			//$this.find('textarea').focus();
 
-			//console.log('name_input: ', $(that).find('input').val());
+			$this.prevAll().find('.inner').css('height', 'auto');
+			$this.find('.inner').css('height', '100%');
+			$this.nextAll().find('.inner').css('height', 'auto');
+		});
+	}
 
+	this.init = function() {
+		$('#year').text(flexNote.getDate);
 
+		$inputs.fadeTo(1500, 1);
 
-			//console.log('name_storage: ', JSON.parse(localStorage.getItem('c' + i)));
+		getDataStorage(5);
+		setDataStorage();
 
-			//var aux_name = JSON.parse(localStorage.getItem('c' + i));
-
-			//console.log(aux_name.name);
-
-			$(that).find('input').val(JSON.parse(localStorage.getItem('c' + i)).name);
-
-			$(that).find('textarea').val(JSON.parse(localStorage.getItem('c' + i)).description);
-
-		}
-
+		animationColumns();
 	};
 
-	$colums.on('click', function() {
+}
 
-		$this = $(this);
+FlexNote.prototype = {
 
-		$this.prevAll().css('width', '15%');
-		$this.css('width', '40%');
-		$this.nextAll().css('width', '15%');
+	constructor: FlexNote,
 
-		$this.prevAll().find('textarea').css('width', '0').hide();
-		$this.find('textarea').css('width', '100%').fadeTo(250, 1).show();
-		$this.nextAll().find('textarea').css('width', '0').hide();
-		//$this.find('textarea').focus();
+	getDate: function() {
+		var today = new Date(),
+				day = today.getDate(),
+				month = today.getMonth() + 1,
+				year = today.getFullYear();
 
-		$this.prevAll().find('.inner').css('height', '0');
-		$this.find('.inner').css('height', '100%');
-		$this.nextAll().find('.inner').css('height', '0');
+		if(day < 10) { day='0'+day }
+		if(month < 10) { month='0'+month }
 
-	});
+		return year;
+	}
 
-	$colums.on('focusout', function() {
+};
 
-		var data = {};
+document.addEventListener('DOMContentLoaded', function() {
 
-		var pos_column = $(this).data("column");
-		var name = $(this).find('input').val();
-		var description = $(this).find('textarea').val();
-
-		data.name = name;
-		data.description = description;
-
-		localStorage.setItem(pos_column, JSON.stringify(data));
-
-		//console.log(localStorage.getItem('c0').name);
-
-	});
+	flexNote.init();
 
 });
-
-function getDate() {
-
-	var today = new Date();
-			day = today.getDate();
-			month = today.getMonth() + 1;
-			year = today.getFullYear();
-
-	if(day < 10) { day='0'+day }
-	if(month < 10) { month='0'+month }
-
-	return year;
-
-}
