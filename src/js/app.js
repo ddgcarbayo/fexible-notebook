@@ -51,7 +51,7 @@ function FlexNote() {
 	}
 
 	this.init = function() {
-		$('#year').text(flexNote.getDate);
+		$('#year').text(flexNote.getDate());
 
 		$inputs.fadeTo(1500, 1);
 
@@ -63,22 +63,18 @@ function FlexNote() {
 
 }
 
-FlexNote.prototype = {
+FlexNote.prototype.constructor = FlexNote;
 
-	constructor: FlexNote,
+FlexNote.prototype.getDate = function() {
+	var today = new Date(),
+			day = today.getDate(),
+			month = today.getMonth() + 1,
+			year = today.getFullYear();
 
-	getDate: function() {
-		var today = new Date(),
-				day = today.getDate(),
-				month = today.getMonth() + 1,
-				year = today.getFullYear();
+	if(day < 10) { day='0'+day }
+	if(month < 10) { month='0'+month }
 
-		if(day < 10) { day='0'+day }
-		if(month < 10) { month='0'+month }
-
-		return year;
-	}
-
+	return year;
 };
 
 document.addEventListener('DOMContentLoaded', function() {
